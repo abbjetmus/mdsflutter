@@ -6,12 +6,19 @@ Flutter plugin for MDS (Movesense Device Service) that is used for communicating
 
 #### iOS
 
-1. Intall Movesense iOS library using CocoaPods with adding this line to your app's Podfile:
+Install Movesense iOS library using CocoaPods like this in `ios/Podfile`:
   ```
-  pod 'Movesense', :git => 'ssh://git@altssh.bitbucket.org:443/suunto/movesense-mobile-lib.git'
-  ```
+  target 'Runner' do
+    # Add :linkage => :static
+    use_frameworks! :linkage => :static
+    use_modular_headers!
 
-2. Remove "use_frameworks!" from your Podfile so that libmds.a can be used correctly.
+    flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+    # Add this line
+    pod 'Movesense', :git => 'https://bitbucket.org/movesense/movesense-mobile-lib.git'
+  end
+  ```
 
 #### Android
 
