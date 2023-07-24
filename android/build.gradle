@@ -50,9 +50,9 @@ protobuf {
     protoc {
         // for apple m1, please add protoc_platform=osx-x86_64 in $HOME/.gradle/gradle.properties
         if (project.hasProperty('protoc_platform')) {
-            artifact = "com.google.protobuf:protoc:3.23.4:${protoc_platform}"
+            artifact = "com.google.protobuf:protoc:3.18.0:${protoc_platform}"
         } else {
-            artifact = "com.google.protobuf:protoc:3.23.4"
+            artifact = "com.google.protobuf:protoc:3.18.0"
         }
     }
     generateProtoTasks {
@@ -68,7 +68,7 @@ protobuf {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.google.protobuf:protobuf-javalite:3.24.4'
+    implementation 'com.google.protobuf:protobuf-javalite:3.18.0'
     // RxAndroidBle helper library
     implementation "com.polidea.rxandroidble2:rxandroidble:1.11.0"
     implementation(name: 'mdslib', version: '+', ext: 'aar')
